@@ -1,6 +1,7 @@
 <?php
 $ACTokenFunctions = array(
     'ACTokens::generateToken',
+    'AccountCaptcha::fuzzToken',
 );
 require_once(__DIR__ . '/Tokens.php');
 require_once(__DIR__ . '/AccountCaptcha.body.php');
