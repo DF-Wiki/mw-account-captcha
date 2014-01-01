@@ -3,6 +3,10 @@ $ACTokenFunctions = array(
     'ACTokens::generateToken',
 );
 require_once(__DIR__ . '/Tokens.php');
+require_once(__DIR__ . '/AccountCaptcha.body.php');
+
+$wgHooks['UserCreateForm'][] = 'AccountCaptchaHooks::UserCreateForm';
+$wgHooks['AbortNewAccount'][] = 'AccountCaptchaHooks::AbortNewAccount';
 
 $ACCredits = array(
     'path' => __FILE__,

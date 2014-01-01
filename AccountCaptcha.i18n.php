@@ -21,6 +21,9 @@ This is the token you will need to create an account. Copy it '''exactly'''
 into the account creation form as it appears here.
 TEXT
 ,
+        'accountcaptcha-token-desc' =>
+'You must [[Special:AccountCaptcha|obtain a token]] in order to create an account',
+        'accountcaptcha-invalid-token' => 'The token you have entered is invalid. Please submit the form again.'
 );
  
 /** Message documentation
@@ -31,4 +34,6 @@ $messages[ 'qqq' ] = array(
 	'accountcaptcha-desc' => "AccountCaptcha description",
         'accountcaptcha-form-text' => "Text displayed when entering a username",
         'accountcaptcha-result-text' => "Text displayed when recieving a token",
+        'accountcaptcha-token-desc' => "Text displayed on login form next to token text box",
+        'accountcaptcha-invalid-token' => "Message displayed if token entered on login form is incorrect",
 );

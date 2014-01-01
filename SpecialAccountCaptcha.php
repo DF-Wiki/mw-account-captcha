@@ -27,11 +27,7 @@ HTML;
                 }
                 else {
                     $output->addHtml($this->msg('accountcaptcha-result-text')->parse());
-                    $token = $username;
-                    global $ACTokenFunctions;
-                    foreach ($ACTokenFunctions as $func) {
-                        $token = call_user_func($func, $token);
-                    }
+                    $token = AccountCaptcha::generateToken($username);
                     $output->addHTML(self::getTokenHTML($token));
                 }
  	}
