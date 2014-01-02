@@ -7,7 +7,9 @@ class SpecialAccountCaptcha extends SpecialPage {
 </form>
 HTML;
         public static function getTokenHTML($token) {
-        return <<<HTML
+		# Spans!
+		$token = '<span>' . preg_replace('/(\d)/', '$1</span><span class="accountcaptcha-x$1">', $token) . '</span>';
+		return <<<HTML
 <h3 id="accountcaptcha-token">$token</h3>
 HTML;
         }
