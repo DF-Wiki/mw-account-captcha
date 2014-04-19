@@ -36,6 +36,9 @@ class AccountCaptcha {
         $username = strrev($username) . "\\";
         return $username;
     }
+    public static function getFormToken($request) {
+        return md5($request->getAllHeaders()['USER-AGENT']);
+    }
 }
 class AccountCaptchaHooks {
     public static function UserCreateForm(&$form) {
