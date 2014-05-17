@@ -45,7 +45,7 @@ class AccountCaptchaHooks {
         $form->addInputItem( 'acToken', '', 'text', 'accountcaptcha-token-desc' );
         return true;
     }
-    public static function AbortNewAccount($user, $message) {
+    public static function AbortNewAccount($user, &$message) {
         global $wgRequest;
         $token = $wgRequest->getText('acToken');
         $username = $wgRequest->getText('wpName');
@@ -53,7 +53,7 @@ class AccountCaptchaHooks {
             return true;
         }
         else {
-            $msg = wfMsg('accountcaptcha-invalid-token');
+            $message = wfMessage('accountcaptcha-invalid-token')->parse();
             return false;
         }
     }

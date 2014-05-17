@@ -23,8 +23,8 @@ TEXT
 ,
         'accountcaptcha-token-desc' =>
 'You must [[Special:AccountCaptcha|obtain a token]] in order to create an account',
-        'accountcaptcha-invalid-token' => 'The token you have entered is invalid. Please submit the form again.',
-        'accountcaptcha-error-badtoken' => '<p class="error">Form validation failed. Please try again.</p>',
+        'accountcaptcha-invalid-token' => 'The token you have entered is invalid. Please try again.',
+        'accountcaptcha-error-badtoken' => 'Form validation failed. Please try again.',
 );
  
 /** Message documentation
