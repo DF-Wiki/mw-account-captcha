@@ -36,6 +36,7 @@ HTML;
                 }
                 else {
 			$output->addHtml($this->msg('accountcaptcha-result-text')->parse());
+			$username = Title::makeTitleSafe(NS_USER, $username)->getText();
 			$token = AccountCaptcha::generateToken($username);
 			$output->addHTML(self::getTokenHTML($token));
                 }
