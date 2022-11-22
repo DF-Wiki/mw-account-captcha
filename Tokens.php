@@ -8,8 +8,9 @@ interface IAccountCaptchaTokenGenerator {
     public static function generateToken(string $username): string;
 }
 
+global $wgExtensionDirectory;
 foreach ([
-    "$IP/extensions/ACTokens.php",
+    "$wgExtensionDirectory/ACTokens.php",
     __DIR__ . "/../ACTokens.php",
     __DIR__ . "/../../extensions/ACTokens.php",
 ] as $actokens_path) {

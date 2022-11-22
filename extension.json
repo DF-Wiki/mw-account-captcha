@@ -1,0 +1,44 @@
+{
+    "manifest_version": 2,
+    "name": "AccountCaptcha",
+    "version": "0.3.0",
+    "type": "antispam",
+    "author": ["[[User:Lethosor|Lethosor]]"],
+    "url": "https://github.com/DF-Wiki/mw-account-captcha",
+    "descriptionmsg": "accountcaptcha-desc",
+    "requires": {
+        "MediaWiki": ">=1.27.0"
+    },
+    "AutoloadClasses": {
+        "AccountCaptcha": "AccountCaptcha.php",
+        "AccountCaptchaPreAuthenticationProvider": "AccountCaptcha.php",
+        "ACTokens": "AccountCaptcha.php",
+        "SpecialAccountCaptcha": "SpecialAccountCaptcha.php"
+    },
+    "ExtensionMessagesFiles": {
+        "AccountCaptcha": "AccountCaptcha.i18n.php"
+    },
+    "config_prefix": "ACConfig",
+    "config": {
+        "TokenFunctions": {
+            "value": [
+                "ACTokens::generateToken",
+                "AccountCaptcha::fuzzToken"
+            ],
+            "merge_strategy": "array_merge"
+        }
+    },
+    "AuthManagerAutoConfig": {
+        "preauth": {
+            "AccountCaptchaPreAuthenticationProvider": {
+                "class": "AccountCaptchaPreAuthenticationProvider",
+                "sort": 0
+            }
+        }
+    },
+    "SpecialPages": {
+        "AccountCaptcha": {
+            "class": "SpecialAccountCaptcha"
+        }
+    }
+}
